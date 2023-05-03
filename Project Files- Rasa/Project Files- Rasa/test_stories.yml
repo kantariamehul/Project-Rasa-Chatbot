@@ -1,0 +1,287 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+
+- story: admission_A
+  steps:
+  - user: |
+     hello
+    intent: greet       
+  - action: utter_greet
+  - action: utter_Why
+  - user: |
+     admission inquiry
+    intent: Why_adm
+  - action: utter_Why_adm
+  - user: |
+     yes
+    intent: agree
+  - action: utter_past
+  - user: |
+     12th
+    intent: inform_education
+    entities:
+    - education: "12"
+  - action: utter_degree
+  - user: |
+     BE
+    intent: inform_degree
+    entities:
+    - degree: "B.Tech"
+  - action: utter_course
+  - user: |
+     Engineering
+    intent: inform_course
+    entities:
+    - course: "Engineering"
+  - action: utter_branch
+  - user: |
+     Computer Engineering
+    intent: inform_branch
+    entities:
+    - branch: "Computer Engineering"
+  - action: utter_additional_info
+  - user: |
+     yes
+    intent: agree
+  - action: utter_student_mobile_ask
+  - user: |
+     +919574067299
+    intent: inform_mobile
+    entities:
+    - mobile: "6692819161"
+  - action: utter_student_name
+  - user: |
+     Mehul
+    intent: inform_name
+    entities:
+    - name: "Mehul"
+  - action: utter_student_surname
+  - user: |
+     Kantaria
+    intent: inform_surname
+    entities:
+    - surname: "Kantaria"
+  - action: utter_student_city
+  - user: |
+     Rajkot
+    intent: inform_city
+    entities:
+    - city: "Rajkot"
+  - action: utter_student_result
+  - user: |
+     99
+    intent: inform_result
+    entities:
+    - result: "87"
+  - action: action_adm_data
+  - action: utter_will_contact
+  - action: utter_adm_info_display
+  - action: utter_happy
+  - action: utter_goodbye
+  - user: |
+     thank you
+    intent: thank
+  - action: utter_offline
+
+
+
+- story: admission_B
+  steps:
+  - user: |
+     hi
+    intent: greet       
+  - action: utter_greet
+  - action: utter_Why
+  - user: |
+     admission
+    intent: Why_adm
+  - action: utter_Why_adm
+  - user: |
+     no
+    intent: deny
+  - action: utter_human_handoff
+
+
+- story: admission_C
+  steps:
+  - user: |
+     Kem cho
+    intent: greet       
+  - action: utter_greet
+  - action: utter_Why
+  - user: |
+     admission mate
+    intent: Why_adm
+  - action: utter_Why_adm
+  - user: |
+     yes
+    intent: agree
+  - action: utter_past
+  - user: |
+     12
+    intent: inform_education
+    entities:
+    - education: "12"
+  - action: utter_degree
+  - user: |
+     B.Tech.
+    intent: inform_degree
+    entities:
+    - degree: "B.Tech"
+  - action: utter_course
+  - user: |
+     engg
+    intent: inform_course
+    entities:
+    - course: "Engineering"
+  - action: utter_branch
+  - user: |
+     CE
+    intent: inform_branch
+    entities:
+    - branch: "Computer Engineering"
+  - action: utter_additional_info
+  - user: |
+     no
+    intent: deny
+  - action: utter_human_handoff
+  - action: utter_goodbye
+
+
+- story: email_issue_A
+  steps:
+  - user: |
+     Hello
+    intent: greet       
+  - action: utter_greet
+  - action: utter_Why
+  - user: |
+     email password reset
+    intent: password_reset
+  - action: utter_password_reset
+  - user: |
+     patel@gmail.com
+    intent: inform_email
+    entities:
+    - email: "mehul@gmail.com"
+  - action: utter_student_email_greet
+  - action: utter_password_reset_verify
+  - user: |
+     my enrollment is 123456789090
+    intent: inform_enrollment
+    entities:
+    - enrollment: "209977543211"
+  - action: action_email_data
+  - action: utter_student_enrollment_greet 
+  - action: utter_email_info_display
+  - user: |
+     Thank you
+    intent: thank
+  - action: utter_goodbye
+  - action: utter_offline
+
+
+- story: email_issue_B
+  steps:
+  - user: |
+     hi
+    intent: greet       
+  - action: utter_greet
+  - action: utter_Why
+  - user: |
+     reset my password
+    intent: password_reset
+  - action: utter_password_reset
+  - user: |
+     patel@hotmail.com
+    intent: inform_email
+    entities:
+    - email: "mehul@gmail.com"
+  - action: utter_student_email_greet
+  - action: utter_password_reset_verify
+  - user: |
+     my enrollment number is 123456123456
+    intent: inform_enrollment
+    entities:
+    - enrollment: "209977543211"
+  - action: action_email_data
+  - action: utter_student_enrollment_greet 
+  - action: utter_email_info_display
+
+
+- story: email_issue_C
+  steps:
+  - user: |
+     I wants to reset my emial password
+    intent: password_reset
+  - action: utter_password_reset
+  - user: |
+     mehul@yahoo.co.in
+    intent: inform_email
+    entities:
+    - email: "mehul@gmail.com"
+  - action: utter_student_email_greet
+  - action: utter_password_reset_verify
+  - user: |
+     enrollment is 098760987609
+    intent: inform_enrollment
+    entities:
+    - enrollment: "209977543211"
+  - action: action_email_data
+  - action: utter_student_enrollment_greet 
+  - action: utter_email_info_display
+
+
+- story: I_am_bot
+  steps:
+   - user: |
+      Who are you?
+     intent: iamabot
+   - action: utter_iamabot
+
+- story: Human_hand_off_1
+  steps:
+   - user: |
+      I dont want to chat with robot
+     intent: human_handoff
+   - action: utter_human_handoff
+
+- story: Human_hand_off_2
+  steps:
+   - user: |
+      I want to talk with human
+     intent: help
+   - action: utter_human_handoff
+
+- story: Out_o_Scope
+  steps:
+   - user: |
+      What is highest salary
+     intent: out_of_scope
+   - action: utter_out_of_scope
+   - action: utter_human_handoff
+
+- story: MU Info API
+  steps:
+   - user: |
+      Where is MU
+     intent: About_MU
+   - action: utter_About_MU
+   - action: action_weather_data
+
+- story: Placement
+  steps:
+   - user: |
+      placement info
+     intent: About_Placement
+   - action: utter_placement
+
+- story: Math is Fun API
+  steps:
+   - user: |
+      I love maths
+     intent: About_Math
+   - action: utter_About_Maths
+   - action: action_math_data

@@ -1,0 +1,827 @@
+version: "3.1"
+
+nlu:
+
+- intent: greet #1
+  examples: |
+    - hey,
+    - helo
+    - hello
+    - hello.
+    - hi
+    - hy
+    - hi!
+    - hi.
+    - hi,
+    - hi, bot
+    - hieee
+    - hieeeeeeeeeeeee
+    - hola
+    - hello there
+    - good morning
+    - good evening
+    - good afternoon
+    - hey there
+    - hi there
+    - hello there
+    - greetings
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - goodafternoon
+    - What is up?
+    - Whats up
+    - Whats up my bot
+    - Whats up?
+    - namaste
+    - kem cho
+- intent: Why_adm
+  examples: |
+    - Admission
+    - Admission inquiry
+    - Want to know more about university
+    - Want to visit university
+    - Engineering admission
+    - Study after 12th science
+    - I want to take admission
+    - I want to take admission in Marwadi
+    - I want to take admission in Marwadi University
+    - I want to take admission in Engineering
+    - Admission Madse
+    - Visit university
+    - Details about Marwadi university
+    - Details about university
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - good bye
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - good bye
+    - see you around
+    - see you later
+    - see ya
+    - buh bye
+    - bye
+    - bye bye
+    - bye :P
+    - bye bot
+    - bye bye
+    - bye bye bot
+    - bye for now
+    - it was nice talking to you
+    - bye!
+    - byee
+    - catch you later
+    - good bye
+    - good bye rasa bot!
+    - good night
+    - goodnight
+    - okbye
+    - ok bye
+    - ok, bye
+    - ok.bye
+    - see u later
+    - see ya
+    - see you
+    - see you bye
+    - take care
+    - tlak to you later
+    - aavjo
+- intent: thank
+  examples: |
+    - thanks!
+    - thank you
+    - thanks a lot
+    - great thanks
+    - i appreciate it
+    - cool thanks
+    - cool,thanks
+    - great, thanks
+    - thank you so much
+    - thank's!
+    - Thanks bot
+    - Thanks for that
+    - Thanks!
+    - amazing, thanks
+    - cool thank you
+    - cool, thanks
+    - great thanks
+    - ok thanks
+    - ok thanks
+    - ok thanks!
+    - perfect thank you
+    - thank u
+    - thank you
+    - thank you anyways
+    - thanks
+    - thanks for everything
+    - thanks a lot
+    - thanks for the help
+    - thanks you
+    - thanks!
+    - thankyou
+    - thnks
+    - thx
+    - yes thanks
+    - thanks for your information
+    - thank you for all
+    - thank you for everything
+    - thank you for help
+    - aabhar
+- intent: agree
+  examples: |
+    - yes
+    - Yes
+    - Ha
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yes please
+    - yes I would
+    - please do
+    - yup
+    - yep
+    - that's right
+    - indeed
+    - yeah
+    - sure
+    - yes thanks
+    - That would be great
+    - YUP
+    - Yea
+    - Yeah
+    - Yeah sure
+    - Yep
+    - Yep that's fine
+    - Yep
+    - Yepp
+    - Yes I do
+    - Yes please
+    - Yes please!
+    - Yes, I accept
+    - Go ahead
+    - Carry on
+    - ha
+    - Ha
+    - Sachu
+    - pucho
+- intent: deny
+  examples: |
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+    - no thanks
+    - not that one
+    - don't use that
+    - please no
+    - no don't do that
+    - no, use abraham.lincoln@example.com
+    - Neither
+    - Never
+    - Nevermind
+    - No thank you
+    - No, not really.
+    - No, thank you
+    - No.
+    - Nopes
+    - Not really
+    - absolutely not
+    - decline
+    - definitely not
+    - deny
+    - na
+    - nah
+    - nah I'm good
+    - I dont know
+    - nathi khabar
+    - nathi
+    - no
+    - No
+    - Na
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - i am fine
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - majama
+    - jakkas
+    - badhiya
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - problem
+    - problems
+    - panoti chale che
+    - problem problem j che
+    - kharab
+    - bov kharab
+- intent: out_of_scope
+  examples: |
+    - Bus route
+    - last year cutoff
+    - Last year cutoff
+    - Admission cutoff
+    - last year admission cutoff
+    - will I get admission
+    - Temperature 
+    - weather
+    - Temperature details
+    - weather details
+    - Last year admission cutoff
+    - get admission
+    - what is the square root of 5
+    - I want to know the weather
+    - what is the meaning of life.
+    - mobile is not Running
+    - mobile is not working
+    - my tv isn't working
+    - I want a pizza
+    - my washing machine isn't working
+    - what year is it
+    - order a pizza
+    - I want to order a pizza
+    - what is the weather today
+    - what is the weather
+    - how old are you?
+    - add two plus two
+    - how about the forecast
+    - foolish
+    - joke
+    - ok google
+    - hey siri
+    - Can I get a panipuri?
+    - Can YouTube talk?
+    - Can you call me back ?
+    - Can you give me your password
+    - Can you give me your datacenter's password?
+    - Can you make sandwiches?
+    - Can you please send me an uber
+- intent: password_reset
+  examples: |
+    - need to reset my password
+    - need help resetting my password
+    - I can't reset my password
+    - need help with my password
+    - having issues resetting my password
+    - reset my password
+    - password is not working
+    - cant open email
+    - cant open my gmail
+    - password reset
+    - forgot my password and can't reset it
+    - help to reset passoword
+    - password reset help please
+    - I'm having so many problems resetting my password
+    - Can you reset my password reset
+    - My pass word isn't working for me what do I do
+    - How can I reconfigure my pass word
+    - pass word reset?
+    - forgot my pass word again what now
+    - password help fix 
+    - show me how to set password again
+    - can you tell me how to change my password
+    - change pass word
+    - I forgot my password what can I do
+    - forgot my password help me reset it pls
+    - password bhulai gayo
+    - password yad nathi
+    - gmail no password bhulai gayo
+    - gmail no password yad nathi
+    - I want to reset my password
+    - I forgot my password
+    - I forgot my email password
+    - password forgot
+    - forgot password
+    - password
+    - reset password
+    - reset gmail password
+    - reser email password
+    - password reset
+    - reset
+    - forgot email password
+    - password issue
+    - issue of password
+    - issue of email password
+    - email password issue
+    - reset my gmail password
+    - reset gmail password
+- intent: help
+  examples: |
+    - I need help
+    - what can you help me with
+    - can you help me
+    - what can you do
+    - I need some help
+    - help me
+    - can you please help me
+    - problem
+    - big problem
+    - How can you help me
+    - How you help me?
+    - I need some help
+    - What are my options
+    - What are you able to do?
+    - What can I ask you?
+    - What can I do?
+    - What can you demo
+    - What can you do for me?
+    - What can you do?
+    - What can you tell me?
+    - What do you do
+    - anything els
+    - are there any other options?
+    - can I ask you anything else?
+    - can you do anything else?
+    - can you help me?
+    - come back
+    - cool! can I do something else here?
+    - hello what can you do for me
+    - help
+    - help me
+    - help please
+    - help pls
+    - help?
+    - hep me
+    - madad
+    - madad karo
+- intent: human_handoff
+  examples: |
+    - I want a human
+    - Help
+    - help
+    - can I speak to a person
+    - real agent please
+    - real human
+    - human
+    - admission department
+    - officer
+    - profesor
+    - chat with a live agent
+    - give me a person please
+    - i want to talk to a human
+    - can you transfer me to a human?
+    - handoff
+    - talk to a human
+    - i need to talk to a human
+    - human please
+    - i need help from a human
+    - i need help from a real human
+    - give me a human
+    - i want to talk to human
+    - i want a representative
+    - i want to talk to a person
+    - I don't wanna talk to a bot
+    - I dont like to talk to a machine
+    - I want to talk to a human
+    - I want to talk to the founders
+    - are there also humans working for your company?
+    - can I speak to a person?
+    - can i please speak to a human?
+    - can you forward me to your team
+    - can you please connect me to a real rasa employee?
+    - can you put me in touch with a human?
+    - do you have human support ?
+    - gimme a proper human
+    - give me a human now
+    - human handoff
+    - i dont wanna talk to a bot
+    - i want to speak to a real person
+    - i want to speak to customer service
+    - i want to talk to a human
+    - i want to talk to a person
+    - i want to talk to human
+    - i want to talk to someone at rasa
+    - i want to talk to someone else
+    - i want to talk to someone who is smarter than you
+    - i would like to speak to a person
+    - i'd rather speak with a real rasa employee
+    - id like to talk to a real rasa employee
+    - let me speak with a real person please
+    - let me talk to a human
+    - let me talk to a real person
+    - please give me a human
+    - service agent
+    - someone from customer care
+    - speak to a real person
+    - talking to a bot is stupid
+    - that's annoying I'd like to speak to someone real
+    - thats not helping, can i talk to human?
+    - wrong i want to speak to a human
+    - can i speak to human
+    - can i speak to your human
+    - i want to chat with human
+    - How do I talk to a human
+    - talk with a human
+    - Can i talk to a human instead
+    - nevermind.... you're not human ... I need to talk to a live person
+    - Can you get a human to assist me?
+    - Can i talk to a human?
+    - Can I talk to a human
+    - Can I speak to a human?
+    - can i speak to a human
+    - no, i want to talk to human
+    - can you hand a conversation over to a human?
+    - can I talk to human?
+    - can I talk to human
+    - talk to human
+    - i want human :(
+    - can i talk to human
+    - i want to talk to a human
+    - i want to speak to human
+    - can i talk to a real person?
+    - connect me to a real person
+    - I need a real person
+    - can i took with a real person
+    - let me speak to a real person
+    - let me speak to a real person please
+    - i want to talk to a real person
+    - Mare tari sathe vat nathi karvi
+    - sir ke madam ne bolavo
+    - koi biju tya che
+- intent: iamabot
+  examples: |
+    - Who are you?
+    - What is your name?
+    - your name
+    - who
+    - who?
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - am I talking to staff?
+    - am I talking to officer?
+    - am I talking to professor?
+    - am I talking to admission department?
+    - you are a bot right
+    - aren't you a bot
+    - Are you a bot?
+    - are you a BOT
+    - are you a chatbot
+    - are you a rasa bot?
+    - are you a real bot?
+    - are you a robot
+    - are you ai
+    - are you artificial
+    - are you artificial intelligence
+    - are you bot
+    - are you bot?
+    - are you rasa bot?
+    - are you real
+    - are you real lol
+    - are you really a bot
+    - are you robot
+    - are you sure that you're a bot?
+    - bot?
+    - robot?
+    - ai?
+    - bot
+    - robot
+    - ai
+    - i guess you are a chatbot
+    - oh are you chatbot?
+    - tell me, are you a bot?
+    - what are you, a bot?
+    - you are a robot
+    - you are ai
+    - you are chatbot
+    - you're a bot
+    - you robo
+    - real bot then?
+    - are you really a bbot?
+    - kon
+    - kon?
+    - tame kon cho?
+    - tame kon?
+    - tame kon cho
+    - tame kon
+- intent: Great_time
+  examples: |
+    - It was great time to talk
+    - You are really intelligent
+    - You are nice
+    - you are intelligent
+    - nice to talk
+    - nice to see you
+- intent: inform_email
+  examples: |
+    - my email is [mehul@gmail.com](email)
+    - my emailid is [mehul@gmail.com](email)
+    - my email id is [mehul@gmail.com](email)
+    - email is [patel@yahoo.com](email)
+    - email id is [mehul@gmail.com](email)
+    - [kantaria.@gmail.com](email)
+    - it is [mehul.patel@yahoo.com](email)
+    - [patel.mehul@yahoo.co.in](email)
+    - [mehul.patel@hotmail.com](email)
+    - [@gmail.com](email)
+    - [@yahoo.com](email)
+    - [@yahoo.co.in](email)
+    - [@hotmail.com](email)
+- intent: inform_enrollment
+  examples: |
+    - my enrollment number is [111111111111](enrollment)
+    - enrollment number is [121111111111](enrollment)
+    - my enrollment is [121111111111](enrollment)
+    - enrollment is [131111111111](enrollment)
+    - [151111111111](enrollment)
+    - [161111111111](enrollment)
+    - [171111111111](enrollment)
+    - [181111111111](enrollment)
+    - [191111111111](enrollment)
+    - [201111111111](enrollment)
+    - [211111111111](enrollment)
+    - [221111111111](enrollment)
+    - [231111111111](enrollment)
+    - [111111111111](enrollment)
+    - [121111111111](enrollment)
+    - [131111111111](enrollment)
+    - [141111111111](enrollment)
+- intent: inform_name
+  examples: |
+    - My name is [mehul](name)
+    - [Mehul](name)
+    - [mehul](name)
+    - [Utsav](name)
+    - [utsav](name)
+    - [Virag](name)
+    - [virag](name)
+    - [Sajal](name)
+    - [sajal](name)
+    - [Khevin](name)
+    - [khevin](name)
+- intent: inform_surname
+  examples: |
+    - My surname is [Kantaria](surname)
+    - [patel](surname)
+    - [Patel](surname)
+    - [Savaliya](surname)
+    - [savaliya](surname)
+    - [Sakariya](surname)
+    - [sakariya](surname)
+    - [Gupta](surname)
+    - [gupta](surname)
+    - [Bhanderi](surname)
+    - [bhanderi](surname)
+- intent: inform_result
+  examples: |
+    - I have [99](result)
+    - Percentile is [99](result)
+    - [99](result) percentile
+    - [99](result) %
+    - [99](result)%
+    - [pass](result)
+    - [fail](result)
+    - [99](result)
+    - [99%](result)
+    - [100](result)
+    - [100%](result)
+    - [98](result)
+    - [98%](result)
+    - [97](result)
+    - [97%](result)
+    - [96](result)
+    - [96%](result)
+    - [95](result)
+    - [95%](result)
+    - [94](result)
+    - [94%](result)
+    - [93](result)
+    - [93%](result)
+    - [92](result)
+    - [92%](result)
+    - [91](result)
+    - [91%](result)
+    - [90](result)
+    - [90%](result)
+    - [89](result)
+    - [89%](result)
+    - [88](result)
+    - [88%](result)
+    - [87](result)
+    - [87%](result)
+    - [86](result)
+    - [86%](result)
+    - [85](result)
+    - [85%](result)
+    - [84](result)
+    - [84%](result)
+    - [83](result)
+    - [83%](result)
+    - [82](result)
+    - [82%](result)
+    - [81](result)
+    - [81%](result)
+    - [80](result)
+    - [80%](result)
+    - [79](result)
+    - [79%](result)
+    - [78](result)
+    - [78%](result)
+    - [77](result)
+    - [77%](result)
+    - [76](result)
+    - [76%](result)
+    - [75](result)
+    - [75%](result)
+    - [74](result)
+    - [74%](result)
+    - [73](result)
+    - [73%](result)
+    - [72](result)
+    - [72%](result)
+    - [71](result)
+    - [71%](result)
+    - [70](result)
+    - [70%](result)
+    - [69](result)
+    - [69%](result)
+    - [68](result)
+    - [68%](result)
+    - [67](result)
+    - [67%](result)
+    - [66](result)
+    - [66%](result)
+    - [65](result)
+    - [65%](result)
+    - [64](result)
+    - [64%](result)
+    - [63](result)
+    - [63%](result)
+    - [62](result)
+    - [62%](result)
+    - [61](result)
+    - [61%](result)
+    - [60](result)
+    - [60%](result)
+    - [59](result)
+    - [59%](result)
+    - [58](result)
+    - [58%](result)
+    - [57](result)
+    - [57%](result)
+    - [56](result)
+    - [56%](result)
+    - [55](result)
+    - [55%](result)
+    - [54](result)
+    - [54%](result)
+    - [53](result)
+    - [53%](result)
+    - [52](result)
+    - [52%](result)
+    - [51](result)
+    - [51%](result)
+    - [50](result)
+    - [50%](result)
+- intent: inform_city
+  examples: |
+    - [Rajkot](city)
+    - [Ahmedabad](city)
+    - [surat](city)
+    - [Gondal](city)
+    - [morbi](city)
+    - [bhavnagar](city)
+- intent: inform_mobile
+  examples: |
+    - my mobile number is [+919574067299](mobile)
+    - mobile number is [+919574067299](mobile)
+    - mobile [+919574067299](mobile)
+    - [+919574067299](mobile)
+    - [+16692819161](mobile)
+    - [+919400000000](mobile)
+    - [+919411111111](mobile)
+    - [+15252552252](mobile)
+    - [+919898989898](mobile)
+- intent: inform_course
+  examples: |
+    - [Engineering](course)
+    - [Arts](course)
+    - [commerse](course)
+    - [diploma](course)
+    - [engg](course)
+    - [llb](course)
+- intent: inform_education
+  examples: |
+    - [10](education)
+    - [10th](education)
+    - [ssc](education)
+    - [SSC](education)
+    - [12](education)
+    - [12th](education)
+    - [HSC](education)
+    - [dasmu](education)
+    - [barmu](education)
+- intent: inform_degree
+  examples: |
+    - [Diploma](degree)
+    - [diploma](degree)
+    - [siplo](degree)
+    - [Diplo](degree)
+    - [Bachelor](degree)
+    - [BE](degree)
+    - [B.Tech](degree)
+    - [B.tech](degree)
+    - [B.Tech.](degree)
+    - [b.tech.](degree)
+    - [M.E.](degree)
+    - [ME](degree)
+    - [Master](degree)
+    - [PHD](degree)
+- intent: inform_branch
+  examples: |
+    - [Computer Engineering](branch)
+    - [CE](branch)
+    - [IT](branch)
+    - [Information technology](branch)
+    - [ICT](branch)
+    - [Information and communication technology](branch)
+    - [Mechanical](branch)
+    - [mechnical engineering](branch)
+    - [Civil](branch)
+    - [civil engineering](branch)
+    - [computer science](branch)
+- intent: About_MU
+  examples: |
+    - Where is Marwadi university?
+    - I want to know more about Marwadi University
+    - Kindly tell me about Marwadi University
+    - More info about Marwadi University
+    - Information about Marwadi University
+    - Details about Marwadi University
+    - Address of university
+    - Address of Marwadi University
+    - Where is MU?
+    - I want to know more about MU
+    - Kindly tell me about MU
+    - More info about MU
+    - Information about MU
+    - Details about MU
+    - Address of university
+    - Address of MU
+    - Address
+    - address
+    - about MU
+    - About MU
+    - I want to visit
+    - I want to visit Marwadi University
+    - I want to visit MU
+- intent: About_Placement
+  examples: |
+    - Placement
+    - placement
+    - job
+    - Job
+    - Placement Details
+    - placement details
+    - job details
+    - Job Details
+    - Scope of the
+- intent: About_Math #28
+  examples: |
+    - I am bored
+    - I like maths
+    - Maths is my favourite subject
+    - I like puzzles 
+    - puzzles
+    - I am intelligent
+    - I love Math
+    - I love math
+    - I love Maths
+    - I love maths
+    - Puzzles

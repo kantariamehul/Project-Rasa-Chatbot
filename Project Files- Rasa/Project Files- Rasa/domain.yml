@@ -1,0 +1,304 @@
+version: "3.1"
+
+intents: # 28 Intents
+- greet #1
+- Why_adm
+- goodbye
+- thank
+- agree
+- deny
+- mood_great
+- mood_unhappy
+- out_of_scope
+- password_reset
+- help
+- human_handoff
+- iamabot
+- Great_time
+- inform_email
+- inform_enrollment
+- inform_name
+- inform_surname
+- inform_result
+- inform_city
+- inform_mobile
+- inform_course
+- inform_education
+- inform_degree
+- inform_branch
+- About_MU
+- About_Placement
+- About_Math #28
+
+entities: # 13 Entities
+- email #1
+- enrollment
+- name
+- surname
+- result
+- city
+- mobile
+- course
+- education
+- degree
+- branch
+- Rajkot_weather
+- Math_prob #13
+
+slots: # 13 Slots
+  email:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: email
+  enrollment:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: enrollment
+  name:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: name
+  surname:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: surname
+  result:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: result
+  city:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: city
+  mobile:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: mobile
+  course:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: course
+  education:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: education
+  degree:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: degree
+  branch:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: branch
+  Rajkot_weather:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: Rajkot_weather
+  Math_prob:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: Math_prob
+
+responses: # 39 Responces
+ utter_greet: #1
+ - text: Hello!,
+ - text: Hello
+ - text: hi! I am MU_ChatBot
+ - text: Hello! MU_ChatBot here
+ - text: Namaste
+ utter_Why:
+ - text: How may I help you?
+ - text: Can you write what information or help do you require?
+ - text: Kindly write your query.
+ utter_Why_adm:
+ - text: Got it, you are here to inquire about admission process or information about various options. Right?
+ - text: You are here to inquire about admission process or information about various options. Right?
+ - text: Are you here to inquire about admission process? yes/no
+ utter_goodbye:
+ - text: Thank you for contacting Marwadi University.
+ - text: Thank you.
+ - text: Thank you for contacting.
+ - text: I hope it was a great conversation
+ - text: Aavjo
+ utter_thank:
+ - text: You are welcome
+ - text: No problem
+ - text: Welcome
+ - text: It was my pleasure
+ - text: Aabhar
+ utter_affirm:
+ - text: ok.
+ - text: Nice to hear
+ - text: Good
+ - text: Nice
+ - text: barabar
+ utter_deny:
+ - text: No problem
+ - text: Its fine
+ - text: Will figure it out
+ - text: its ok
+ - text: Kai vandho nai
+ utter_mood_great:
+  - text: "Wow"
+  - text: "Great"
+  - text: "Amaizing"
+  - text: "Nice"
+  - text: "Khub saras"
+ utter_mood_unhappy:
+  - text: "No problem"
+  - text: "Its fine"
+  - text: "Will figure it out"
+  - text: "its ok"
+  - text: "Kai vandho nai"
+ utter_out_of_scope:
+ - text: Hello! I am MU_ChatBot. I can answer with limited functionalities
+ - text: I can answer with limited functionalities,I am a MU_ChatBot.
+ - text: My knowledge is limited, sorry, you are talking to MU_ChatBot
+ - text: MU_ChatBot cant answer all questions
+ - text: Kindly ask relavent questions to MU_ChatBot
+ utter_password_reset:
+ - text: Kindly enter your Marwadi University email-id. You will receive a link in email to reset your password.
+ - text: Kindly enter your MU email-id. A link will be sent to you in email to reset your password.
+ - text: Kindly enter your academic email-id.To reset your password we will send a link on email.
+ utter_password_reset_verify:
+ - text: Kindly enter 12 digits Marwadi University enrollment number to verify your identity.
+ - text: To verify your identity, please enter 12 digits Marwadi University enrollment number.
+ - text: 12 digits MU enrollment number is required to verify your identity.
+ utter_help:
+ - text: Definately, I will guide you. Kindly let me know the matter in one sentence.
+ - text: I will guide you. Could you descrive the problem in a one sentence.
+ - text: I am here to help. please share the issue.
+ - text: Definately, I will guide you. In brief describe your problem.
+ utter_student_email_greet:
+ - text: Thank you for sharing your email, we will send a link to reset password on {email}.
+ - text: Soon, you will receive link to reset password on email address {email}.
+ - text: We will send further details as soon as possible on your email {email}
+ utter_student_enrollment_greet:
+ - text: Thank you for sharing your details.
+ - text: Thanks for sharing your details.
+ - text: Thanks for details.
+ utter_student_email_ask:
+ - text: Kindly share your email address.
+ - text: May I know your email addreess.
+ - text: If you dont mind, please share your email.
+ utter_email_info_display:
+ - text: The details you have submitted are {email} and {enrollment}.
+ - text: Hello, {email} and {enrollment} is saved.
+ - text: Kindly check details.  {email} and {enrollment}.
+ utter_adm_info_display:
+ - text: The details you have submitted are {name} {surname}, from {city}, mobile number {mobile}.
+ - text: Hello, {name} {surname},I will store you are from {city} and your mobile number {mobile} for future communication.
+ - text: Kindly check details. {name} {surname},from {city}, mobile number {mobile}.
+ utter_email_back:
+ - text: Your email is {email}.
+ - text: I will store {email} for future communication.
+ - text: Perfect!. I have noted {email}
+ utter_student_mobile_ask:
+ - text: Kindly share your or your parent's mobile number with country code +919574067299.
+ - text: May I know your mobile number with country code +16692819161?
+ - text: Would you like to share your mobile number with country code +919898989898?
+ utter_student_name:
+ - text: Kindly share your first name
+ - text: May I know your first name?
+ - text: What is your first name?
+ utter_student_surname:
+ - text: Next, kindly share your last name.
+ - text: May I know your last name?
+ - text: what is your last name?
+ utter_student_city:
+ - text: kindly share your city name 
+ - text: may I know from where you are 
+ - text: what is your city name?
+ utter_student_result:
+ - text: Kindly share percentile in 2 digits like 87.
+ - text: May I know your percentile? ex. 57
+ - text: What is your percentile? example 82
+ utter_human_handoff:
+ - text: Thank you for your patience. You can call to +91 9988776655 to talk with our representative for further queries. Thank you.
+ - text: Thank you. You can call to +91 9988776655 to talk with our representative for further queries.
+ - text: Call to +91 9988776655 to talk with our representative for further queries. Thank you.
+ - text: +91 9988776655 can be used to contact representative.
+ utter_iamabot:
+ - text: I am a MU_CHatBot 252, powered by Rasa, designed my Mehulkumar, at SJSU, CA, USA.
+ - text: You are chatting with MU_CHatBot 252, powered by Rasa, designed my Mehulkumar, at SJSU, CA, USA.
+ - text: MU_CHatBot 252 is here to help you, I am powered by Rasa, designed my Mehulkumar, at SJSU, CA, USA.
+ utter_past:
+ - text: May I know which standard have you completed recently...10th or 12th
+ - text: Which standard have you completed recently...10th or 12th
+ - text: Which standard exam have you cleared recently? 10th or 12th
+ utter_degree:
+ - text: Can you write the degree name in which you are interested for Diploma, Bachelor, B.tech, BE, ME, PHD
+ utter_course:
+ - text: I hope you have aquired enough knowledge about various options, else you can join any seminar to gain knowledge about various courses. May I know the course of your interest? like Engineering / Diploma / Arts / commerse / llb?
+ utter_branch:
+ - text: Great, there are infinite sope in the course. May I know the choice of branch like CE/IT/CIVIL/MECH/ICT?
+ - text: Its a great choice :). Which is your prefered branch CE/IT/CIVIL/MECH/ICT?
+ utter_is_it_all:
+ - text: I hope, I have provided required help to you. In case of any general query contact us on +91 9988776655.
+ utter_happy:
+ - text: Great, have a nice day.
+ - text: Thanks for your time.
+ - text: Hope to see you soon in MU campus.
+ utter_additional_info:
+ - text: If you dont mind, may I ask you some personal details to serve you better?
+ - text: May I ask you some of your personal details?
+ - text: Would you like to share some of your persoanl details?
+ utter_will_contact:
+ - text: Very soon, our representative will contact you for further details.
+ - text: Our admission counciller will conact you soon on your mobile numbre.
+ - text: You will be concatced by our experts on telephone.
+ utter_offline:
+ - text: MU_ChatBot is offline now
+ - text: I am offline
+ - text: Bot is Offline
+ utter_About_MU:
+ - text: "Marwadi University is located on Rajkot-Morbi Highway. It is 20 Km from Rajkot and 60 Km from Morbi. You can click here https://www.marwadiuniversity.ac.in/about/ to get more information about MU."
+ utter_placement:
+ - text: "Each year, we are visited by top recruiting companies who participate in the placement drive. Our students receive minimum package offers of Rs. 3 lakhs p.a to a maximum of Rs. 33 lakhs p.a. https://www.marwadiuniversity.ac.in/wp-content/uploads/2019/05/placement-2019.pdf"
+ action_adm_data:
+ - text: Your information is saved.
+ action_email_data:
+ - text: Your email and enrollment are saved.
+ action_weather_data:
+ - text: Currently MU campus weather is:{Rajkot_weather}
+ utter_About_Maths:
+ - text: I hope you like Mathematics based puzzles...
+ action_math_data: #39
+ - text: The math problem statement is:{Math_prob}
+ 
+
+session_config:
+ session_expiration_time: 0.0
+ carry_over_slots_to_new_session: True
+
+actions:
+- action_adm_data #1
+- action_email_data
+- action_weather_data
+- action_math_data #4

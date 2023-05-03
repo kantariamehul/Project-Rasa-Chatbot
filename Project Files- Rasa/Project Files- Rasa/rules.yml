@@ -1,0 +1,19 @@
+version: "3.1"
+
+rules: # 3 rules
+
+ - rule: Say 'I am a bot' anytime the user challenges
+   steps:
+   - intent: out_of_scope
+   - action: utter_out_of_scope
+   - action: utter_human_handoff
+
+ - rule: Say help any time
+   steps:
+   - intent: human_handoff
+   - action: utter_human_handoff
+
+ - rule: Who are you
+   steps:
+   - intent: iamabot
+   - action: utter_iamabot

@@ -1,0 +1,190 @@
+version: "3.1"
+
+stories: # 13 stories
+
+- story: admission_A
+  steps:
+  - intent: greet       
+  - action: utter_greet
+  - action: utter_Why
+  - intent: Why_adm
+  - action: utter_Why_adm
+  - intent: agree
+  - action: utter_past
+  - intent: inform_education
+    entities:
+    - education: "12"
+  - action: utter_degree
+  - intent: inform_degree
+    entities:
+    - degree: "B.Tech"
+  - action: utter_course
+  - intent: inform_course
+    entities:
+    - course: "Engineering"
+  - action: utter_branch
+  - intent: inform_branch
+    entities:
+    - branch: "Computer Engineering"
+  - action: utter_additional_info
+  - intent: agree
+  - action: utter_student_mobile_ask
+  - intent: inform_mobile
+    entities:
+    - mobile: "6692819161"
+  - action: utter_student_name
+  - intent: inform_name
+    entities:
+    - name: "Mehul"
+  - action: utter_student_surname
+  - intent: inform_surname
+    entities:
+    - surname: "Kantaria"
+  - action: utter_student_city
+  - intent: inform_city
+    entities:
+    - city: "Rajkot"
+  - action: utter_student_result
+  - intent: inform_result
+    entities:
+    - result: "87"
+  - action: action_adm_data
+  - action: utter_will_contact
+  - action: utter_adm_info_display
+  - action: utter_happy
+  - action: utter_goodbye
+  - intent: thank
+  - action: utter_offline
+
+- story: admission_B
+  steps:
+  - intent: greet       
+  - action: utter_greet
+  - action: utter_Why
+  - intent: Why_adm
+  - action: utter_Why_adm
+  - intent: deny
+  - action: utter_human_handoff
+ 
+- story: admission_C
+  steps:
+  - intent: greet       
+  - action: utter_greet
+  - action: utter_Why
+  - intent: Why_adm
+  - action: utter_Why_adm
+  - intent: agree
+  - action: utter_past
+  - intent: inform_education
+    entities:
+    - education: "12"
+  - action: utter_degree
+  - intent: inform_degree
+    entities:
+    - degree: "B.Tech"
+  - action: utter_course
+  - intent: inform_course
+    entities:
+    - course: "Engineering"
+  - action: utter_branch
+  - intent: inform_branch
+    entities:
+    - branch: "Computer Engineering"
+  - action: utter_additional_info
+  - intent: deny
+  - action: utter_human_handoff
+  - action: utter_goodbye
+
+- story: email_issue_A
+  steps:
+  - intent: greet       
+  - action: utter_greet
+  - action: utter_Why
+  - intent: password_reset
+  - action: utter_password_reset
+  - intent: inform_email
+    entities:
+    - email: "mehul@gmail.com"
+  - action: utter_student_email_greet
+  - action: utter_password_reset_verify
+  - intent: inform_enrollment
+    entities:
+    - enrollment: "209977543211"
+  - action: action_email_data
+  - action: utter_student_enrollment_greet 
+  - action: utter_email_info_display
+  - intent: thank
+  - action: utter_goodbye
+  - action: utter_offline
+
+- story: email_issue_B
+  steps:
+  - intent: greet       
+  - action: utter_greet
+  - action: utter_Why
+  - intent: password_reset
+  - action: utter_password_reset
+  - intent: inform_email
+    entities:
+    - email: "mehul@gmail.com"
+  - action: utter_student_email_greet
+  - action: utter_password_reset_verify
+  - intent: inform_enrollment
+    entities:
+    - enrollment: "209977543211"
+  - action: action_email_data
+  - action: utter_student_enrollment_greet
+  - action: utter_email_info_display
+
+- story: email_issue_C
+  steps:
+  - intent: password_reset
+  - action: utter_password_reset
+  - intent: inform_email
+    entities:
+    - email: "mehul@gmail.com"
+  - action: utter_password_reset_verify
+  - intent: inform_enrollment
+    entities:
+    - enrollment: "209977543211"
+  - action: utter_student_enrollment_greet
+  - action: action_email_data
+  - action: utter_email_info_display
+
+- story: I_am_bot
+  steps:
+   - intent: iamabot
+   - action: utter_iamabot
+
+- story: Human_hand_off_1
+  steps:
+   - intent: human_handoff
+   - action: utter_human_handoff
+
+- story: Human_hand_off_2
+  steps:
+   - intent: help
+   - action: utter_human_handoff
+
+- story: Out_o_Scope
+  steps:
+   - intent: out_of_scope
+   - action: utter_out_of_scope
+   - action: utter_human_handoff
+
+- story: MU Info API
+  steps:
+   - intent: About_MU
+   - action: utter_About_MU
+   - action: action_weather_data
+
+- story: Placement
+  steps:
+   - intent: About_Placement
+   - action: utter_placement
+
+- story: Math is Fun API
+  steps:
+   - intent: About_Math
+   - action: utter_About_Maths
+   - action: action_math_data
