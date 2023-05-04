@@ -5,7 +5,7 @@ def Weather_fun():
     # base URL
     BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
     CITY = "Rajkot"
-    API_KEY = "f6ca853d9492e9ef96edce9c188fc090"
+    API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
     # upadting the URL
     #URL = https://api.openweathermap.org/data/2.5/weather?q=Rajkot&appid=f6ca853d9492e9ef96edce9c188fc090
